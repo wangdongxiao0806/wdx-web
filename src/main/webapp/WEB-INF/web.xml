@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+    <servlet>
+        <servlet-name>sevlet</servlet-name>
+        <servlet-class>com.wdx.file.DownloadSevlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>sevlet</servlet-name>
+        <url-pattern>/sevlet</url-pattern>
+    </servlet-mapping>
 </web-app>
