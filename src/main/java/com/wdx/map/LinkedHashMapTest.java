@@ -5,13 +5,28 @@ import java.util.Map;
 
 /**
  *
- * LinkedHashMap可以保证集合有序
- * LinkedHashMap保证遍历顺序和访问顺序一致，其中put、get、compute都算作访问
+ * LinkedHashMap可以按照存入顺序保证遍历顺序
+ * LinkedHashMap通过不同的构造方法可以保证遍历顺序和访问顺序一致，其中put、get、compute都算作访问
  * 使用LinkedHashMap的removeEldestEntry，可以实现自动删除非热点数据，
  */
 public class LinkedHashMapTest {
 
     public static void main(String[] args){
+
+
+        LinkedHashMap<String,String> linkedHashMap = new LinkedHashMap<String,String>();
+        linkedHashMap.put("key1","value1");
+        linkedHashMap.put("key2","value2");
+        linkedHashMap.put("key3","value3");
+        linkedHashMap.put("key4","value4");
+        linkedHashMap.forEach((k,v)->{
+            System.out.println("linkedHashMap的遍历顺序为;key:valye="+k+":"+v);
+        });
+
+
+        /**
+         * 设置accessOrder为true保证遍历顺序和访问顺序一直
+         */
         LinkedHashMap<String,String> accessOrderedMap = new LinkedHashMap<String,String>(16,0.75F,true){
             @Override
             protected boolean removeEldestEntry(Map.Entry<String, String> eldest) {
