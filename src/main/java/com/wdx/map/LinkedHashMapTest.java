@@ -19,9 +19,9 @@ public class LinkedHashMapTest {
         linkedHashMap.put("key2","value2");
         linkedHashMap.put("key3","value3");
         linkedHashMap.put("key4","value4");
-        linkedHashMap.forEach((k,v)->{
-            System.out.println("linkedHashMap的遍历顺序为;key:valye="+k+":"+v);
-        });
+//        linkedHashMap.forEach((k,v)->{
+//            System.out.println("linkedHashMap的遍历顺序为;key:valye="+k+":"+v);
+//        });
 
 
         /**
@@ -39,20 +39,20 @@ public class LinkedHashMapTest {
         accessOrderedMap.put("key1","value1");
         accessOrderedMap.put("key2","value2");
         accessOrderedMap.put("key3","value3");
-        //此次遍历，返回3条数据，顺序就是key1,key2,key3
-        accessOrderedMap.forEach((k,v)->{
-            System.out.println("当前LinkedHashMap中的key：value="+v+":"+v);
-        });
-        accessOrderedMap.get("key1");
-        //此次遍历，返回3条数据，顺序就是key2,key3,key1
-        accessOrderedMap.forEach((k,v)->{
-            System.out.println("当前LinkedHashMap中的key：value="+v+":"+v);
-        });
-        accessOrderedMap.put("key4","value4");
-        //此次遍历，返回3条数据，顺序就是key3,key1,key4
-        accessOrderedMap.forEach((k,v)->{
-            System.out.println("当前LinkedHashMap中的key：value="+v+":"+v);
-        });
+//        //此次遍历，返回3条数据，顺序就是key1,key2,key3
+//        accessOrderedMap.forEach((k,v)->{
+//            System.out.println("当前LinkedHashMap中的key：value="+v+":"+v);
+//        });
+//        accessOrderedMap.get("key1");
+//        //此次遍历，返回3条数据，顺序就是key2,key3,key1
+//        accessOrderedMap.forEach((k,v)->{
+//            System.out.println("当前LinkedHashMap中的key：value="+v+":"+v);
+//        });
+//        accessOrderedMap.put("key4","value4");
+//        //此次遍历，返回3条数据，顺序就是key3,key1,key4
+//        accessOrderedMap.forEach((k,v)->{
+//            System.out.println("当前LinkedHashMap中的key：value="+v+":"+v);
+//        });
 
     }
 }
