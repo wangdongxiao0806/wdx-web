@@ -1,7 +1,6 @@
 package com.wdx.nio;
 
 import java.io.IOException;
-import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
@@ -16,12 +15,13 @@ public class NIOServer {
 
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
 
-        serverSocketChannel.bind(new InetSocketAddress(12200));
+        serverSocketChannel.socket().bind(new InetSocketAddress(12200));
         serverSocketChannel.configureBlocking(false);
 
         Selector selector = Selector.open();
 
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
+
 
         while (true) {
             Set<SelectionKey> selectedKeys = selector.selectedKeys();
